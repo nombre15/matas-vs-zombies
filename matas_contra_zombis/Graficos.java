@@ -122,6 +122,17 @@ class Graficos extends JPanel {
             g.drawImage(fondoSolesImg, -460, -40, 700, 200, null);
             g.drawImage(placaSolesImg, 17, 60, 200, 100, null);
             g.drawImage(solesGif, 17, -10, 200, 100, null);
+            
+            if (juego.isGameOver()) {
+                
+                // Dibujar la pantalla de "Game Over"
+                g.setColor(Color.black);
+                g.fillRect(0, 0, getWidth(), getHeight());
+                g.setColor(Color.RED);
+                g.setFont(new Font("Arial", Font.BOLD, 48));
+                g.drawString("Game Over", getWidth() / 2 - 100, getHeight() / 2);
+                // Otros elementos de la pantalla de "Game Over"
+            }
         }
         
         //Funcion para hacer que los soles sean clickeables

@@ -277,6 +277,8 @@ public class Juego extends JFrame {
                 zombies.remove(i);
                 i--;
                 gameOver = true;
+                contadorLbl.setVisible(false);
+                sombraContadorLbl.setVisible(false);
             } 
             else {
                 
@@ -329,6 +331,14 @@ public class Juego extends JFrame {
         return random.nextInt(6000) + 5000;
     }
     
+    public void verificarGameOver() {
+    // ...
+
+        if (gameOver) {
+            imagenFondo.repaint();
+       }
+    }
+    
     public boolean getIsSolVisible(){
         
         return isSolVisible;
@@ -337,6 +347,11 @@ public class Juego extends JFrame {
     public boolean getIsPreviewVisible(){
         
         return isPreviewVisible;
+    }
+    
+    public boolean getIsGameOver(){
+        
+        return gameOver;
     }
     
     public boolean isGameOver(){
